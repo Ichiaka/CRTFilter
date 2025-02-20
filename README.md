@@ -81,7 +81,7 @@ Live preview: [CRTFilter Examples](https://ichiaka.github.io/CRTFilter/Examples/
 
 | Before | After |
 |--------|-------|
-| [Before]<img src="/Examples/images/imagen1.jpg" alt="Description" width="450" height="450"> | [After]<img src="/Examples/images/after1.jpg" alt="Description" width="450" height="450"> |
+| <img src="/Examples/images/imagen1.jpg" alt="Description" width="450" height="450"> | <img src="/Examples/images/after1.jpg" alt="Description" width="450" height="450"> |
 | ![Before](/Examples/images/imagen5.jpg|450) | ![After](/Examples/images/after5.png|450) |
 | ![Before](/Examples/images/imagen11.jpg|450) | ![After](/Examples/images/after11.png|450) |
 
