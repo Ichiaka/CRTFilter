@@ -126,7 +126,7 @@
 
     </script>
     <script type="module">
-        import { CRTFilterWebGL } from './CRTFilter.js';
+        import { CRTFilterWebGL } from '../CRTFilter.js';
         const crt = new CRTFilterWebGL(document.getElementById('canvas'));
         crt.start();
         document.getElementById('Filtro').addEventListener('click', () => crt.start());
