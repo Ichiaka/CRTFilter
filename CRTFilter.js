@@ -4,7 +4,7 @@
  * @version 1.0.0
  * @license MIT
  * @author Aka
- * @repository https://github.com/yourusername/CRTFilterWebGL
+ * @repository https://github.com/Ichiaka/CRTFilterWebGL
  * 
  * Copyright (c) 2025 Aka
  * 
@@ -30,7 +30,7 @@
 export class CRTFilterWebGL {
     constructor(canvas, config = {}) {
         if (!canvas) {
-            console.error("Canvas no encontrado.");
+            console.error("Canvas not found.");
             return;
         }
 
@@ -42,7 +42,7 @@ export class CRTFilterWebGL {
 
         this.gl = this.glcanvas.getContext('webgl');
         if (!this.gl) {
-            console.error("WebGL no soportado.");
+            console.error("WebGL is not supported.");
             return;
         }
 
@@ -99,7 +99,7 @@ export class CRTFilterWebGL {
         this.gl.shaderSource(shader, source);
         this.gl.compileShader(shader);
         if (!this.gl.getShaderParameter(shader, this.gl.COMPILE_STATUS)) {
-            console.error("Error compilando shader:", this.gl.getShaderInfoLog(shader));
+            console.error("Error compiling shader:", this.gl.getShaderInfoLog(shader));
             this.gl.deleteShader(shader);
             return null;
         }
@@ -112,7 +112,7 @@ export class CRTFilterWebGL {
         this.gl.attachShader(program, fragmentShader);
         this.gl.linkProgram(program);
         if (!this.gl.getProgramParameter(program, this.gl.LINK_STATUS)) {
-            console.error("Error enlazando programa:", this.gl.getProgramInfoLog(program));
+            console.error("Error linking program:", this.gl.getProgramInfoLog(program));
             return null;
         }
         return program;
