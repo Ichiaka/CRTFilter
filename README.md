@@ -77,7 +77,9 @@ Stops the CRT effect and restores the original `canvas`.
 
 Live preview: [CRTFilter Examples](https://ichiaka.github.io/CRTFilter/Examples/)
 
-### Before and After Comparison
+### Before and After Comparison (WARNING)
+
+The effect is dynamic, so these static images do not accurately represent the results. For better undestanding check Live preview.
 
 | Before | After |
 |--------|-------|
