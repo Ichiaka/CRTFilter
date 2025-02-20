@@ -81,9 +81,9 @@ Live preview: [CRTFilter Examples](https://ichiaka.github.io/CRTFilter/Examples/
 
 | Before | After |
 |--------|-------|
-| ![Before](https://ichiaka.github.io/CRTFilter/Examples/imagen1.jpg) | ![After](https://ichiaka.github.io/CRTFilter/Examples/after1.png) |
-| ![Before](https://ichiaka.github.io/CRTFilter/Examples/imagen5.jpg) | ![After](https://ichiaka.github.io/CRTFilter/Examples/after5.png) |
-| ![Before](https://ichiaka.github.io/CRTFilter/Examples/imagen11.jpg) | ![After](https://ichiaka.github.io/CRTFilter/Examples/after11.png) |
+| ![Before](/Examples/images/imagen1.jpg) | ![After](/Examples/images/after1.png) |
+| ![Before](/Examples/images/imagen5.jpg) | ![After](/Examples/images/after5.png) |
+| ![Before](/Examples/images/imagen11.jpg) | ![After](/Examples/images/after11.png) |
 
 ## Compatibility
 
