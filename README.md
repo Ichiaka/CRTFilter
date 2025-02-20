@@ -1,6 +1,6 @@
-# CRTFilterWebGL
+# CRTFilter
 
-CRTFilterWebGL is a JavaScript library that applies a CRT effect to a `canvas` using WebGL. This effect is ideal for retro-style video games that aim to replicate old CRT screens.
+CRTFilter is a JavaScript library that applies a CRT effect to a `canvas` using WebGL. This effect is ideal for retro-style video games that aim to replicate old CRT screens.
 
 ## Features
 
@@ -72,6 +72,18 @@ Starts the CRT effect.
 ### `stop()`
 
 Stops the CRT effect and restores the original `canvas`.
+
+## Examples
+
+Live preview: [CRTFilter Examples](https://ichiaka.github.io/CRTFilter/Examples/)
+
+### Before and After Comparison
+
+| Before | After |
+|--------|-------|
+| ![Before](https://ichiaka.github.io/CRTFilter/Examples/imagen1.png) | ![After](https://ichiaka.github.io/CRTFilter/Examples/after1.png) |
+| ![Before](https://ichiaka.github.io/CRTFilter/Examples/imagen5.png) | ![After](https://ichiaka.github.io/CRTFilter/Examples/after5.png) |
+| ![Before](https://ichiaka.github.io/CRTFilter/Examples/imagen11.png) | ![After](https://ichiaka.github.io/CRTFilter/Examples/after11.png) |
 
 ## Compatibility
 
