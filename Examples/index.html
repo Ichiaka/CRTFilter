@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRTFilter by Aka</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            width: 80%;
+            scrollbar-width: none;
+        }
+        .carousel img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .carousel img:hover {
+            transform: scale(1.1);
+        }
+        .main-image {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        button, select {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border: none;
+            background-color: #ff9800;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #e68900;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRTFilter.js by Aka <a href="https://twitter.com/akaisred" target="_blank" style="color:#ff9800;">(@akaisred)</a></h1>
+    <p>CRTFilter.js is a WebGL filter for your images or canvas that will give your projects an old CRT TV effect.</p>
+    
+    <div class="carousel" id="carousel">
+        <img src="images/imagen1.jpg" alt="Imagen 1" onclick="seleccionarImagen('images/imagen1.jpg')">
+        <img src="images/imagen2.jpg" alt="Imagen 2" onclick="seleccionarImagen('images/imagen2.jpg')">
+        <img src="images/imagen3.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen3.jpg')">
+        <img src="images/imagen4.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen4.jpg')">
+        <img src="images/imagen5.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen5.jpg')">
+        <img src="images/imagen6.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen6.jpg')">
+        <img src="images/imagen7.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen7.jpg')">
+        <img src="images/imagen8.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen8.jpg')">
+        <img src="images/imagen9.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen9.jpg')">
+        <img src="images/imagen10.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen10.jpg')">
+        <img src="images/imagen11.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen11.jpg')">
+        <img src="images/imagen12.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen12.jpg')">
+        <img src="images/imagen13.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen13.jpg')">
+        <img src="images/imagen14.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen14.jpg')">
+        <img src="images/imagen15.jpg" alt="Imagen 3" onclick="seleccionarImagen('images/imagen15.jpg')">
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+        <button id="Filtro">CRT Effect ON</button>
+        <button id="noFiltro">CRT Effect OFF</button>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let img = new Image();
+
+        function seleccionarImagen(src) {
+            cargarImagen(src);
+        }
+
+        function cargarImagen(src) {
+            img.src = src;
+        }
+
+        img.onload = function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+
+        // Cargar la primera imagen por defecto
+        cargarImagen('images/imagen1.jpg');
+
+    </script>
+    <script type="module">
+        import { CRTFilterWebGL } from './CRTFilter.js';
+        const crt = new CRTFilterWebGL(document.getElementById('canvas'));
+        crt.start();
+        document.getElementById('Filtro').addEventListener('click', () => crt.start());
+        document.getElementById('noFiltro').addEventListener('click', () => crt.stop());
+
+
+/*         barrelDistortion: 0,
+            chromaticAberration: 0,
+            staticNoise: 0,
+            horizontalTearing: 0,
+            glowBloom: 0,
+            verticalJitter: 0,
+            retraceLines: false,
+            dotMask: false,
+            motionBlur: 0, */
+
+    </script>
+</body>
+</html>
