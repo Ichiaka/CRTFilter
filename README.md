@@ -32,58 +32,10 @@ CRTFilter is a JavaScript library that applies a CRT effect to a `canvas` using 
 - **Event Support:**
   - Forwards events from the new `canvas` to the original.
 
-## Changelog - Latest Updates
-
-### Added Features v1.1:
-- **WebGL2 Support with Fallback to WebGL1**
-  - The CRT filter now initializes **WebGL2** by default for improved performance and additional graphical capabilities.
-  - If WebGL2 is not available, it automatically falls back to **WebGL1** to ensure maximum compatibility.
-  
-- **Signal Loss Effect (`signalLoss`)**
-  - Simulates VHS or UHF signal loss artifacts, creating an authentic vintage video distortion effect.
-  - Configurable intensity to enhance the effect depending on user preference.
-  
-- **Brightness and Contrast Adjustments (`brightness`, `contrast`)**
-  - Allows users to fine-tune the display brightness and contrast for a more customized CRT experience.
-  
-- **Desaturation Effect (`desaturation`)**
-  - Reduces color saturation to simulate faded or aged CRT screens.
-  
-- **Flicker Simulation (`flicker`)**
-  - Introduces random flickering, mimicking CRT screen instabilities.
-  
-- **Scanline Intensity Control (`scanlineIntensity`)**
-  - Adjusts the visibility of scanlines, making them more or less prominent.
-  
-- **Curvature Adjustment (`curvature`)**
-  - Enables dynamic control over CRT screen curvature for a more or less exaggerated distortion effect.
-  
-### Updated Shader Code:
-- Fragment shader now includes signal loss simulation, affecting brightness dynamically along the vertical axis.
-- Enhanced chromatic aberration, noise, and jitter for a more immersive retro effect.
-- Optimized performance for WebGL2 rendering while maintaining WebGL1 support for legacy browsers.
-  
-### How to Use the New Features:
-Modify the configuration object when initializing the effect:
-```js
-const config = {
-    signalLoss: 0.05,  // Adjusts intensity of VHS-like signal loss artifacts
-    brightness: 1.2,   // Increase or decrease overall screen brightness
-    contrast: 1.1,     // Controls contrast enhancement
-    desaturation: 0.3, // Makes colors appear more washed out
-    flicker: 0.05,     // Creates slight screen flickering
-    scanlineIntensity: 0.7, // Makes scanlines more visible
-    curvature: 0.004  // Enhances or reduces CRT curvature effect
-};
-const crtEffect = new CRTFilterWebGL(canvas, config);
-crtEffect.start();
-```
-
 ### Future Plans:
 - Additional VHS tracking errors and rolling effects.
 - More customizable distortion patterns for different CRT types.
 - Audio-based interference effects (if applicable in future updates).
-
 
 ## Installation
 
@@ -109,23 +61,22 @@ You can customize the effects by adjusting the configuration parameters:
 
 ```js
 const config = {
-    barrelDistortion: 0.0002,
-    chromaticAberration: 0.00005,
-    staticNoise: 0.002,
-    horizontalTearing: 0.00015,
-    glowBloom: 0.0002,
-    verticalJitter: 0.00015,
-    retraceLines: true,
-    dotMask: true,
-    brightness: 1.2,
-    contrast: 1.1,
-    desaturation: 0.3,
-    flicker: 0.05,
-    scanlineIntensity: 0.7,
-    curvature: 0.004,
-    signalLoss: 0.05,
-    horizontalRoll: 0.02,
-    trackingJitter: 0.03
+    barrelDistortion: 0.001, // Simulates CRT screen curvature
+    curvature: 0.002, // Adjusts the amount of CRT screen curvature
+    chromaticAberration: 0.0005, // Slightly separates RGB colors for a realistic effect
+    staticNoise: 0.001, // Adds static noise to the image
+    horizontalTearing: 0.00012, // Simulates horizontal distortion in a faulty screen
+    glowBloom: 0.001, // Simulates the glow of CRT pixels
+    verticalJitter: 0.001, // Makes the image slightly oscillate vertically
+    retraceLines: true, // Adds CRT refresh lines
+    scanlineIntensity: 0.6, // Adjusts scanline intensity
+    dotMask: false, // Simulates the pixel structure of a CRT screen
+    motionBlur: 0, // Simulates motion blur (currently not implemented)
+    brightness: 0.9, // Adjusts screen brightness
+    contrast: 1.0, // Adjusts image contrast
+    desaturation: 0.2, // Reduces color saturation for a faded effect
+    flicker: 0.01, // Simulates occasional flicker on a CRT screen
+    signalLoss: 0.05 // Simulates VHS or UHF signal loss artifacts
 };
 
 const crtEffect = new CRTFilterWebGL(canvas, config);
@@ -155,7 +106,7 @@ Stops the CRT effect and restores the original `canvas`.
 
 ## Examples
 
-Live preview: [CRTFilter Examples](https://ichiaka.github.io/CRTFilter/Examples/)
+Live preview: [CRTFilter Examples](https://ichiaka.github.io/CRTFilter/)
 
 ### Before and After Comparison (WARNING)
 
