@@ -10,12 +10,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
             background-color: #222;
             font-family: Arial, sans-serif;
             color: white;
             text-align: center;
             padding: 10px;
+        }
+        h1 {
+            margin: 0px;
         }
         .carousel {
             display: flex;
@@ -99,7 +101,7 @@
         <button id="Filtro">CRTFilter ON</button>
         <button id="noFiltro">CRTFilter OFF</button>
     </div>
-    <canvas id="canvas" width="640" height="640"></canvas>
+    <canvas id="canvas" width="450" height="450"></canvas>
 
     <script> 
         const canvas = document.getElementById('canvas');
@@ -126,23 +128,11 @@
 
     </script>
     <script type="module">
-        import { CRTFilterWebGL } from '../CRTFilter.js';
+        import { CRTFilterWebGL } from './CRTFilter.js';
         const crt = new CRTFilterWebGL(document.getElementById('canvas'));
         crt.start();
         document.getElementById('Filtro').addEventListener('click', () => crt.start());
         document.getElementById('noFiltro').addEventListener('click', () => crt.stop());
-
-
-/*         barrelDistortion: 0,
-            chromaticAberration: 0,
-            staticNoise: 0,
-            horizontalTearing: 0,
-            glowBloom: 0,
-            verticalJitter: 0,
-            retraceLines: false,
-            dotMask: false,
-            motionBlur: 0, */
-
     </script>
 </body>
 </html>
